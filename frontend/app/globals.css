@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+/* ─── Base design tokens ─────────────────────────────────────────────────────── */
+
+:root,
+.light {
+  --background:    #f8fafc;
+  --foreground:    #0f172a;
+  --surface:       #ffffff;
+  --surface-2:     #f1f5f9;
+  --surface-3:     #e8eef5;
+  --border:        #e2e8f0;
+  --border-strong: #cbd5e1;
+  --accent:        #6366f1;
+  --accent-hover:  #4f46e5;
+  --accent-subtle: #eef2ff;
+  --muted:         #64748b;
+  --danger:        #ef4444;
+  --danger-subtle: #fef2f2;
+  --success:       #10b981;
+  --success-subtle:#ecfdf5;
+  --warning:       #f59e0b;
+  --warning-subtle:#fffbeb;
+}
+
+.dark {
+  --background:    #0d1117;
+  --foreground:    #e2e8f0;
+  --surface:       #161b22;
+  --surface-2:     #1c2333;
+  --surface-3:     #242d3e;
+  --border:        #30363d;
+  --border-strong: #484f58;
+  --accent:        #818cf8;
+  --accent-hover:  #6366f1;
+  --accent-subtle: #1e1f4a;
+  --muted:         #8b949e;
+  --danger:        #f87171;
+  --danger-subtle: #2d1b1b;
+  --success:       #34d399;
+  --success-subtle:#0d2d22;
+  --warning:       #fbbf24;
+  --warning-subtle:#2d2310;
+}
+
+@theme inline {
+  --color-background:    var(--background);
+  --color-foreground:    var(--foreground);
+  --color-surface:       var(--surface);
+  --color-surface-2:     var(--surface-2);
+  --color-surface-3:     var(--surface-3);
+  --color-border:        var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent:        var(--accent);
+  --color-accent-hover:  var(--accent-hover);
+  --color-accent-subtle: var(--accent-subtle);
+  --color-muted:         var(--muted);
+  --color-danger:        var(--danger);
+  --color-danger-subtle: var(--danger-subtle);
+  --color-success:       var(--success);
+  --color-success-subtle:var(--success-subtle);
+  --color-warning:       var(--warning);
+  --color-warning-subtle:var(--warning-subtle);
+  --font-sans:           var(--font-geist-sans);
+  --font-mono:           var(--font-geist-mono);
+}
+
+/* ─── Base resets ─────────────────────────────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, #__next { height: 100%; margin: 0; padding: 0; }
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* ─── Scrollbar styling ──────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--surface-2); }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+/* ─── ReactFlow overrides ────────────────────────────────────────────────────── */
+
+.react-flow__background { background-color: var(--background) !important; }
+.react-flow__minimap {
+  background-color: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+}
+.react-flow__controls {
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08) !important;
+}
+.react-flow__controls-button {
+  background: var(--surface) !important;
+  border-bottom: 1px solid var(--border) !important;
+  color: var(--foreground) !important;
+}
+.react-flow__edge-path {
+  stroke: var(--border-strong) !important;
+  stroke-width: 2 !important;
+}
+.react-flow__edge.selected .react-flow__edge-path { stroke: var(--accent) !important; }

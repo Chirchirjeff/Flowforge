@@ -1,0 +1,40 @@
+# Source PDFs kept locally; not part of the GitHub source tree.
+/FlowForge.pdf
+/IG SACCO BUSINESS ANALYSIS REPORT REVISION 1 .pdf
+
+# Local credentials and configuration. Keep example templates shareable.
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Dependencies and generated build output.
+node_modules/
+.next/
+out/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Local caches, logs, temporary files, and editor/OS artifacts.
+.cache/
+.turbo/
+.vercel/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.pid
+*.pid.lock
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Private keys and local runtime databases.
+*.pem
+*.sqlite
+*.sqlite3
+*.db
